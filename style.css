@@ -1,0 +1,127 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin: 0px 40px;
+}
+
+footer button{
+    height: min-content;
+    width: fit-content;
+}
+
+#chessboard{
+    display: grid;
+    grid-area: 2 / 2 / 3 / 3;
+    grid-template-columns: repeat(8, 40px);
+    grid-template-rows: repeat(8, 40px);
+    font-size: 30px;
+    user-select: none;
+}
+
+#chessboardContainer{
+    display: grid;
+    grid-area: 2 / 2 / 3 / 3;
+    grid-template-columns: 40px min-content;
+    grid-template-rows: 40px min-content 100px;
+}
+
+#messageDisplay{
+    grid-area: 3 / 2 / 4 / 3;
+    display: flex;
+    align-items: center;
+}
+
+.axis{
+    text-align: center;
+    align-items: center;
+    user-select: none;
+}
+
+#x{
+    display: grid;
+    grid-template-columns: repeat(8, 40px);
+    grid-area: 1 / 2 / 2 / 3;
+
+}
+
+#y{
+    display: grid;
+    grid-template-rows: repeat(8, 40px);
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.canvasOverlay{
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.square{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.square p{
+    z-index: 2;
+    pointer-events: none;
+}
+
+.square:active{
+    border: 2px black solid;
+}
+
+.square img{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+}
+
+.square:hover img{
+    opacity: 20%;
+}
+
+.white{
+    background-color: rgb(255, 255, 101);
+}
+
+.white:hover{
+    background-color: rgb(255, 255, 204);
+    color: rgba(0, 0, 0, 100)
+}
+
+.black{
+    background-color: rgb(226, 216, 109);
+    border: 0.5px rgb(255, 255, 101) dashed;
+}
+
+.black:hover{
+    background-color: rgb(243, 239, 195);
+    color: rgba(0, 0, 0, 100)
+}
+
+.selected{
+    color: rgb(255, 255, 101)
+}
+
+.path{
+    color: rgb(255, 255, 101)
+}
+
+.selected:hover, .path:hover{
+    color: rgb(255, 255, 101)
+}
